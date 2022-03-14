@@ -129,7 +129,7 @@ exports.deleteAll = (req, res) => {
 };
 // Find all published Tutorials
 exports.findAllPublished = (req, res) => {
-    Tutorial.findAll({ where: { published: true } })
+    Tutorial.findAll({ where: { published_status: true } })
         .then(data => {
             res.send(data);
         })

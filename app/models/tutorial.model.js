@@ -14,10 +14,12 @@ module.exports = (sequelize, Sequelize) => {
         published_status: {
             type: Sequelize.BOOLEAN,
             allowNull: false
-        },
-        delete_at: {
-            type: Sequelize.DATE
         }
-    });
+    },
+        {
+            deletedAt: 'deletedAt',
+            paranoid: true,
+            timestamps: true,
+        });
     return Tutorial;
 };
